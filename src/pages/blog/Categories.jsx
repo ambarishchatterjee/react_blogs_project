@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Container, IconButton, List, ListItem, ListItemAvatar, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Box, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
 import axiosInstance from '../../api/axios'
 import { endPoints } from '../../api/endPoints'
 import { FolderCopy, LinkRounded } from '@mui/icons-material'
@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom'
 
 export default function Categories() {
     const [list, setList] = useState()
+
+    const handleClick = () =>{
+
+    }
     const fetchData = async (data) => {
         try {
             const data = await axiosInstance.get(endPoints.blog.showAllCategory)
@@ -29,15 +33,12 @@ export default function Categories() {
                     All Categories
                 </Typography>
                 <List>
-                    {!list && (
-                        "No data"
-                    )}
                     {list && (
                         list.map((category) => {
                             return (
                                 <ListItem key={category._id} secondaryAction={
                                     <Link to={`/category/${category._id}`}>
-                                        <IconButton edge="end">
+                                        <IconButton edge="end"  onClick={()=>handleClick(category._id)}>
                                             <LinkRounded />
                                         </IconButton>
                                     </Link>

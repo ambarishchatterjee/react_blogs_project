@@ -7,7 +7,6 @@ import Categories from './Categories'
 
 export default function CategoryPost() {
     const [list, setList] = useState()
-    const [categoryName, setcategoryName] = useState()
     const { id } = useParams()
 
     const fetchData = async (data) => {
@@ -15,7 +14,6 @@ export default function CategoryPost() {
             const data = await axiosInstance.get(endPoints.blog.categoryPost + id)
             console.log(data)
             setList(data.data.data)
-            setcategoryName(data.data)
         } catch (error) {
             console.log(error)
         }
@@ -23,7 +21,7 @@ export default function CategoryPost() {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    })
 
     return (
         <Container>
