@@ -23,7 +23,7 @@ export default function BlogDetails() {
 
     useEffect(() => {
         fetchData()
-    })
+    },[])
 
 
     return (

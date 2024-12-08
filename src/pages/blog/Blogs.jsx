@@ -5,7 +5,6 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid
 import { Link } from 'react-router-dom'
 //import Categories from './Categories'
 import { FolderCopy, LinkRounded } from '@mui/icons-material'
-import { imagefrombuffer } from "imagefrombuffer";
 
 export default function Blogs() {
     const [list, setList] = useState()
@@ -110,14 +109,14 @@ export default function Blogs() {
                             return (
 
                                 <Card style={{ width: '45%' }} key={blog._id}>
-                                   
+
 
                                     <CardMedia
                                         component="img"
                                         alt={blog.title}
                                         height="140"
-                                         image={`https://swarupapp.in/api/blog/image/${blog._id}`}
-                                        //image={`data:${blog?.photo?.contentType};base64,${blog?.photo?.data}`}
+                                        image={`https://swarupapp.in/api/blog/image/${blog._id}`}
+                                    //image={`data:${blog?.photo?.contentType};base64,${blog?.photo?.data}`}
                                     />
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div" dangerouslySetInnerHTML={{ __html: blog.title }}>

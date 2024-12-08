@@ -21,7 +21,7 @@ export default function CategoryPost() {
 
     useEffect(() => {
         fetchData()
-    })
+    },[])
 
     return (
         <Container>
